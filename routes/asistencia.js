@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { getAsistencias, setAsistencia } = require('../controllers/asistenciaController'); //importamos el controlador de asistencia con "Desestructuración JS"
 
-router.get("/set",setAsistencia)
+router.post("/set",setAsistencia)
 router.get("/get",getAsistencias)
 
 

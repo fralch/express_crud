@@ -1,5 +1,6 @@
 const setAsistencia = function (req, res) {
-    res.send('setAsistencia desde controller');
+    let reqBody = req.body;
+    res.send(reqBody);
 }
 const getAsistencias = (req, res) => {
     res.send('getAsistencias desde controller');
