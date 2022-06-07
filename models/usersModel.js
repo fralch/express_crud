@@ -1,7 +1,7 @@
-const { sequelize } = require('./config/mysql');
+const { sequelize } = require('../config/mysql');
 const { DataTypes } = require('sequelize');
 
-const User = sequelize.define(
+const UserModel = sequelize.define(
     'users',
     {
         dni:{
@@ -10,26 +10,26 @@ const User = sequelize.define(
             autoIncrement: false,
             allowNull: false
         },
-        nombre: {
+        nombres: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        apellido: {
+        apellidos: {
             type: DataTypes.STRING,
             allowNull: false
         },
         fecha_nacimiento: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATE
         },
         email: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING
         },
         celular: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.NUMBER
         }
     },
     {
         timestamps: true,
     }
 );
-module.exports = User;
+module.exports = UserModel;
