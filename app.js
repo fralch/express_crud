@@ -1,6 +1,7 @@
 require("dotenv").config(); 
 const express = require('express');
 const cors = require('cors');
+const {dbConnectMysql} = require('./config/mysql'); // import sequelize 
 const app = express();
 
 app.use(cors()); // sirve para dar permisos de acceso a la api a cualquier dominio
@@ -13,4 +14,6 @@ const port = process.env.PORT || 5000;
 const rutas = require('./routes');
 app.use("/", rutas);
 
-app.listen(port, () => console.log(`servidor - puerto: ${port}!`));
+app.listen(port, () => console.log(`http://localhost:${port}`));
+
+dbConnectMysql(); // conecta a la base de datos
