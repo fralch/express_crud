@@ -1,10 +1,19 @@
 const UserModel = require('../models/usersModel');
 // const {usersModel} = require('../models/indexModel');
 
-const setAsistencia = function (req, res) {
+const setAsistencia = async function (req, res) {
     let reqBody = req.body;
-    res.send(reqBody);
+    // res.send(reqBody);
+    try {
+        const newUser = await UserModel.create(reqBody);
+        console.log(newUser.dni);
+        res.send(newUser);
+    } catch (error) {
+        res.send(error);
+    }
 }
+
+
 /** ESTA ES UNA MANERA DE HACER LAS CONSULTAS, USANDO EL MODELO */
 // const getAsistencias = (req, res) => {
 //     UserModel.findAll()
