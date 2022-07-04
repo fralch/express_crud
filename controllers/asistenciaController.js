@@ -3,14 +3,14 @@ const UserModel = require('../models/usersModel');
 
 const setAsistencia = async function (req, res) {
     let reqBody = req.body;
-    // res.send(reqBody);
-    try {
-        const newUser = await UserModel.create(reqBody);
-        console.log(newUser.dni);
-        res.send(newUser);
-    } catch (error) {
-        res.send(error);
-    }
+    res.send(reqBody);
+    // try {
+    //     const newUser = await UserModel.create(reqBody);
+    //     console.log(newUser.dni);
+    //     res.send(newUser);
+    // } catch (error) {
+    //     res.send(error);
+    // }
 }
 
 
