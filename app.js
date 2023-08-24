@@ -23,6 +23,11 @@ app.post("/subiendo_imagen", (req, res)=>{
     res.send(req); 
 });
 
+app.get("/probando", (req, res)=>{
+    console.log('conexion realizada ');
+    res.send('probando'); 
+});
+
 app.listen(port, () => console.log(`http://localhost:${port}`));
 
 // dbConnectMysql(); // conecta a la base de datos
